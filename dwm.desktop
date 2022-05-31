@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm
+Comment=SCDF build of dwm
+Exec=dwm
+Icon=dwm
+Type=XSession
