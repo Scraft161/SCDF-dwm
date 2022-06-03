@@ -1,20 +1,21 @@
 # Maintainer: Scraft161 <scraft161@gmail.com>
 pkgname=scdf-dwm
 pkgver=6.3
-pkgrel=1
-epoch=1
+pkgrel=4
+#epoch=1
 pkgdesc='dwm build for SCDF'
 arch=('x86_64' 'i686' 'arm' 'aarch64')
 url="https://github.com/Scraft161/SCDF-dwm"
 license=('MIT')
 groups=('scdf-gui' 'scdf-x11')
-depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'alacritty' 'dmenu')
+depends=('libx11' 'libxinerama' 'libxft-bgra' 'freetype2' 'alacritty' 'dmenu')
 provides=('dwm' 'scdf-dwm')
 conflicts=('dwm' 'dwm-git')
 source=("dwm.desktop"
 	"https://dl.suckless.org/dwm/dwm-6.1.tar.gz"
 	"https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff"
 	"https://dwm.suckless.org/patches/flextile/dwm-flextile-20210722-138b405.diff")
+	#"https://dwm.suckless.org/patches/pango/dwm-pango-6.0.diff")
 sha256sums=('cbd37e9060cd9ed71ce16f78f092a02ee9226d97c0efaba6330a092e6590a324'
 	'c2f6c56167f0acdbe3dc37cca9c1a19260c040f2d4800e3529a21ad7cce275fe'
 	'd78711587e6d554de5dc47adca00fc1eb6c8f8ca11c9e75411da8da60eae7abe'
@@ -26,12 +27,17 @@ prepare() {
 	echo "Patching dwm"
 	patch -i "../../dwm-autostart-modified.diff"
 	patch -i "../../dwm-flextile-modified.diff"
+	#patch -i "../dwm-pango-6.0.diff"
+	patch -i "../../dwm-config-scdf.diff"
 	pwd
 	ls -A
 }
 
 build() {
 	cd "$srcdir/dwm-6.1"
+	echo "Applying config"
+#	rm config.h
+	cp config.def.h config.h
 	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11 FREETYPEINC=/usr/include/freetype2
 }
 
