@@ -1,4 +1,9 @@
-dwm-6.1.tar.gz
+pkg/
+src/
+dwm-6.3.tar.gz
 dwm-autostart-20210120-cb3f58a.diff
 dwm-flextile-20210722-138b405.diff
+dwm-ipc-20201106-f04cac6.diff
+config.def.h
+*.log
 *.pkg.tar.zst
