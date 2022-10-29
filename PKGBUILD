@@ -1,7 +1,7 @@
 # Maintainer: Scraft161 <scraft161@gmail.com>
 pkgname=scdf-dwm
 pkgver=6.3
-pkgrel=5
+pkgrel=6
 #epoch=1
 pkgdesc='dwm build for SCDF'
 arch=('x86_64' 'i686' 'arm' 'aarch64')
@@ -16,14 +16,16 @@ source=("dwm.desktop"
 	"https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff"
 	"https://dwm.suckless.org/patches/flextile/dwm-flextile-20210722-138b405.diff"
 	"https://dwm.suckless.org/patches/winicon/dwm-winicon-6.3-v2.1.diff"
-	"https://dwm.suckless.org/patches/ipc/dwm-ipc-20201106-f04cac6.diff")
+	"https://dwm.suckless.org/patches/ipc/dwm-ipc-20201106-f04cac6.diff"
+	"https://dwm.suckless.org/patches/xresources/dwm-xresources-20210827-138b405.diff")
 	#"https://dwm.suckless.org/patches/pango/dwm-pango-6.0.diff")
 sha256sums=('cbd37e9060cd9ed71ce16f78f092a02ee9226d97c0efaba6330a092e6590a324'
 	'badaa028529b1fba1fd7f9a84f3b64f31190466c858011b53e2f7b70c6a3078d'
 	'd78711587e6d554de5dc47adca00fc1eb6c8f8ca11c9e75411da8da60eae7abe'
 	'8fa6086704a73005141fcad09554f05df60816896114c44a60cfcf868614ae00'
 	'887362329b2eab52c9a41bd575061423d28b68febc7a4aef001bdbba9358f7b9'
-	'497f2ebf639c3eeba28ce21f73b7efd2ef2fc045466e43523231094472112da1')
+	'497f2ebf639c3eeba28ce21f73b7efd2ef2fc045466e43523231094472112da1'
+	'38b027743ef43b7d06f49eda7bec2bf5641c7e1575ec46c02f0e915010302c26')
 
 prepare() {
 	cd "$srcdir/dwm-6.3"
@@ -41,6 +43,8 @@ prepare() {
 	echo "ipc"
 	#patch -i "../../dwm-ipc-20201106-f04cac6.diff"
 	patch -i "../../dwm-ipc-modified.diff"
+	echo "Xresources"
+	patch -i "../../dwm-xresources-modified.diff"
 	echo "Config"
 	patch -i "../../dwm-config-scdf.diff"
 }
