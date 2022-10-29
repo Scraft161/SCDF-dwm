@@ -1,5 +1,5 @@
 --- config.def.h	2022-10-29 19:48:34.659084702 +0200
-+++ config-mod.def.h	2022-10-29 23:33:56.747578943 +0200
++++ config-mod.def.h	2022-10-30 01:19:43.925023164 +0200
 @@ -2,13 +2,13 @@
  
  /* appearance */
@@ -54,7 +54,7 @@
  
  /*
   * Xresources preferences to load at startup
-@@ -87,46 +89,46 @@
+@@ -87,50 +89,50 @@
  		{ "snap",          		INTEGER, &snap },
  		{ "showbar",          	INTEGER, &showbar },
  		{ "topbar",          	INTEGER, &topbar },
@@ -70,7 +70,7 @@
 -	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 +	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 +	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
-+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd } },
++	{ STARTKEY,                     XK_t,      spawn,          {.v = termcmd } },
  	{ MODKEY,                       XK_b,      togglebar,      {0} },
  	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
  	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -83,7 +83,7 @@
 +	{ MODKEY,                       XK_space,  zoom,           {0} },
  	{ MODKEY,                       XK_Tab,    view,           {0} },
 -	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-+	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
++	{ MODKEY,                       XK_q,      killclient,     {0} },
  	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
  	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -107,6 +107,10 @@
 -	TAGKEYS(                        XK_8,                      7)
 -	TAGKEYS(                        XK_9,                      8)
 -	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+-	{ MODKEY|ControlMask,           XK_t,      rotatelayoutaxis, {.i = 0} },    /* 0 = layout axis */
+-	{ MODKEY|ControlMask,           XK_Tab,    rotatelayoutaxis, {.i = 1} },    /* 1 = master axis */
+-	{ MODKEY|ControlMask|ShiftMask, XK_Tab,    rotatelayoutaxis, {.i = 2} },    /* 2 = stack axis */
+-	{ MODKEY|ControlMask,           XK_Return, mirrorlayout,     {0} },
 +	TAGKEYS(                        XK_F1,                      0)
 +	TAGKEYS(                        XK_F2,                      1)
 +	TAGKEYS(                        XK_F3,                      2)
@@ -117,6 +121,10 @@
 +	TAGKEYS(                        XK_F8,                      7)
 +	TAGKEYS(                        XK_F9,                      8)
 +	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
- 	{ MODKEY|ControlMask,           XK_t,      rotatelayoutaxis, {.i = 0} },    /* 0 = layout axis */
- 	{ MODKEY|ControlMask,           XK_Tab,    rotatelayoutaxis, {.i = 1} },    /* 1 = master axis */
- 	{ MODKEY|ControlMask|ShiftMask, XK_Tab,    rotatelayoutaxis, {.i = 2} },    /* 2 = stack axis */
++	{ STARTKEY|ShiftMask,           XK_t,      rotatelayoutaxis, {.i = 0} },    /* 0 = layout axis */
++	{ STARTKEY,                     XK_Tab,    rotatelayoutaxis, {.i = 1} },    /* 1 = master axis */
++	{ STARTKEY|ShiftMask,           XK_Tab,    rotatelayoutaxis, {.i = 2} },    /* 2 = stack axis */
++	{ STARTKEY,                     XK_Return, mirrorlayout,     {0} },
+ };
+ 
+ /* button definitions */

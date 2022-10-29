@@ -98,7 +98,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd } },
+	{ STARTKEY,                     XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -108,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -129,10 +129,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_F8,                      7)
 	TAGKEYS(                        XK_F9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
-	{ MODKEY|ControlMask,           XK_t,      rotatelayoutaxis, {.i = 0} },    /* 0 = layout axis */
-	{ MODKEY|ControlMask,           XK_Tab,    rotatelayoutaxis, {.i = 1} },    /* 1 = master axis */
-	{ MODKEY|ControlMask|ShiftMask, XK_Tab,    rotatelayoutaxis, {.i = 2} },    /* 2 = stack axis */
-	{ MODKEY|ControlMask,           XK_Return, mirrorlayout,     {0} },
+	{ STARTKEY|ShiftMask,           XK_t,      rotatelayoutaxis, {.i = 0} },    /* 0 = layout axis */
+	{ STARTKEY,                     XK_Tab,    rotatelayoutaxis, {.i = 1} },    /* 1 = master axis */
+	{ STARTKEY|ShiftMask,           XK_Tab,    rotatelayoutaxis, {.i = 2} },    /* 2 = stack axis */
+	{ STARTKEY,                     XK_Return, mirrorlayout,     {0} },
 };
 
 /* button definitions */

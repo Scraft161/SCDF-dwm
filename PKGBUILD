@@ -1,7 +1,7 @@
 # Maintainer: Scraft161 <scraft161@gmail.com>
 pkgname=scdf-dwm
 pkgver=6.3
-pkgrel=6
+pkgrel=8
 #epoch=1
 pkgdesc='dwm build for SCDF'
 arch=('x86_64' 'i686' 'arm' 'aarch64')
