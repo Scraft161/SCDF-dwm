@@ -129,10 +129,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_F8,                      7)
 	TAGKEYS(                        XK_F9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
-	{ STARTKEY|ShiftMask,           XK_t,      rotatelayoutaxis, {.i = 0} },    /* 0 = layout axis */
-	{ STARTKEY,                     XK_Tab,    rotatelayoutaxis, {.i = 1} },    /* 1 = master axis */
-	{ STARTKEY|ShiftMask,           XK_Tab,    rotatelayoutaxis, {.i = 2} },    /* 2 = stack axis */
-	{ STARTKEY,                     XK_Return, mirrorlayout,     {0} },
+	{ MODKEY|ControlMask,           XK_t,      rotatelayoutaxis, {.i = 0} },    /* 0 = layout axis */
+	{ MODKEY|ControlMask,           XK_Tab,    rotatelayoutaxis, {.i = 1} },    /* 1 = master axis */
+	{ MODKEY|ControlMask|ShiftMask, XK_Tab,    rotatelayoutaxis, {.i = 2} },    /* 2 = stack axis */
+	{ MODKEY|ControlMask,           XK_Return, mirrorlayout,     {0} },
 };
 
 /* button definitions */
