@@ -1,14 +1,14 @@
 # Maintainer: Scraft161 <scraft161@gmail.com>
 pkgname=scdf-dwm
 pkgver=6.3
-pkgrel=9
+pkgrel=11
 #epoch=1
 pkgdesc='dwm build for SCDF'
 arch=('x86_64' 'i686' 'arm' 'aarch64')
 url="https://github.com/Scraft161/SCDF-dwm"
 license=('MIT')
 groups=('scdf-gui' 'scdf-x11')
-depends=('libx11' 'libxinerama' 'libxft-bgra' 'freetype2' 'imlib2' 'yajl' 'alacritty' 'dmenu')
+depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'imlib2' 'yajl' 'alacritty' 'dmenu')
 provides=('dwm' 'scdf-dwm')
 conflicts=('dwm' 'dwm-git')
 source=("dwm.desktop"
