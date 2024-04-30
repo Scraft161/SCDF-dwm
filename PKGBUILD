@@ -28,25 +28,9 @@ sha256sums=('cbd37e9060cd9ed71ce16f78f092a02ee9226d97c0efaba6330a092e6590a324'
 	'38b027743ef43b7d06f49eda7bec2bf5641c7e1575ec46c02f0e915010302c26')
 
 prepare() {
-	cd "$srcdir/dwm-6.3"
-	echo "$srcdir"
+	#cd "$srcdir/dwm-6.3"
 	echo "Patching dwm"
-	echo "Autostart"
-	patch -i "../../dwm-autostart-modified.diff"
-	echo "Flextile"
-	patch -i "../../dwm-flextile-20210722-138b405.diff"
-	#patch -i "../../dwm-flextile-modified.diff"
-	#echo "Pango"
-	#patch -i "../dwm-pango-6.0.diff"
-	echo "winicon"
-	patch -i "../../dwm-winicon-6.3-v2.1.diff"
-	echo "ipc"
-	#patch -i "../../dwm-ipc-20201106-f04cac6.diff"
-	patch -i "../../dwm-ipc-modified.diff"
-	echo "Xresources"
-	patch -i "../../dwm-xresources-modified.diff"
-	echo "Config"
-	patch -i "../../dwm-config-scdf.diff"
+	./patch.sh
 }
 
 build() {

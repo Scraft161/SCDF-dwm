@@ -7,3 +7,4 @@ dwm-ipc-20201106-f04cac6.diff
 config.def.h
 *.log
 *.pkg.tar.zst
+wget-log

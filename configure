@@ -1,0 +1,13 @@
+#!/bin/sh
+
+dwmver="6.3"
+
+# Download & extract dwm to `src/`
+
+mkdir -p "src"
+
+wget -O "src/dwm-${dwmver}.tar.gz" "https://dl.suckless.org/dwm/dwm-${dwmver}.tar.gz"
+#if [ "$$" -ne 0 ]; then exit 1; fi
+tar -xzf "src/dwm-${dwmver}.tar.gz" -C "src"
+
+echo "Done, dwm is downloaded and extracted!\nYou can now run \`patch.sh\` to apply the SCDF patches."
