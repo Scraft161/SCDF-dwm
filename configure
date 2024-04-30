@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dwmver="6.3"
+dwmver="6.5"
 
 # Download & extract dwm to `src/`
 
