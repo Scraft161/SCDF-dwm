@@ -8,9 +8,9 @@ done << EOF
 dwm-autostart-modified.diff
 dwm-flextile-20210722-138b405.diff
 dwm-winicon-6.3-v2.1.diff
-dwm-config-scdf.diff
 dwm-ipc-6.5-modified.diff
 dwm-xresources-6.5-modified.diff
+config-SCDF-6.5.diff
 EOF
 )
 
