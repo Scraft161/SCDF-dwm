@@ -55,7 +55,7 @@ diff -uN src/dwm-6.5-orig/config.def.h src/dwm-6.5/config.def.h
  
  /*
   * Xresources preferences to load at startup
-@@ -87,46 +89,46 @@
+@@ -87,50 +89,50 @@
  		{ "snap",          		INTEGER, &snap },
  		{ "showbar",          	INTEGER, &showbar },
  		{ "topbar",          	INTEGER, &topbar },
@@ -98,6 +98,14 @@ diff -uN src/dwm-6.5-orig/config.def.h src/dwm-6.5/config.def.h
  	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
  	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
  	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+-	{ MODKEY|ControlMask,		  XK_l,	movekeyboard_x, 	{.i = 20}},
+-	{ MODKEY|ControlMask,		  XK_h,	movekeyboard_x, 	{.i = -20}},
+-	{ MODKEY|ControlMask,		  XK_j,	movekeyboard_y, 	{.i = 20}},
+-	{ MODKEY|ControlMask,		  XK_k,	movekeyboard_y, 	{.i = -20}},
++	{ MODKEY|ShiftMask,             XK_l,      movekeyboard_x, 	{.i = 20}},
++	{ MODKEY|ShiftMask,             XK_h,      movekeyboard_x, 	{.i = -20}},
++	{ MODKEY|ShiftMask,             XK_j,      movekeyboard_y, 	{.i = 20}},
++	{ MODKEY|ShiftMask,             XK_k,      movekeyboard_y, 	{.i = -20}},
 -	TAGKEYS(                        XK_1,                      0)
 -	TAGKEYS(                        XK_2,                      1)
 -	TAGKEYS(                        XK_3,                      2)
