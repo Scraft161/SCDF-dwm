@@ -30,6 +30,7 @@ sha256sums=('cbd37e9060cd9ed71ce16f78f092a02ee9226d97c0efaba6330a092e6590a324'
 prepare() {
 	#cd "$srcdir/dwm-6.3"
 	echo "Patching dwm"
+	cd "$srcdir/.."
 	./patch.sh
 }
 
