@@ -12,7 +12,7 @@ depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'imlib2' 'yajl' 'alacritty'
 provides=('dwm' 'scdf-dwm')
 conflicts=('dwm' 'dwm-git')
 source=("dwm.desktop"
-	"https://dl.suckless.org/dwm/dwm-6.3.tar.gz"
+	"https://dl.suckless.org/dwm/dwm-6.5.tar.gz"
 	"https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff"
 	"https://dwm.suckless.org/patches/flextile/dwm-flextile-20210722-138b405.diff"
 	"https://dwm.suckless.org/patches/winicon/dwm-winicon-6.3-v2.1.diff"
@@ -20,7 +20,7 @@ source=("dwm.desktop"
 	"https://dwm.suckless.org/patches/xresources/dwm-xresources-20210827-138b405.diff")
 	#"https://dwm.suckless.org/patches/pango/dwm-pango-6.0.diff")
 sha256sums=('cbd37e9060cd9ed71ce16f78f092a02ee9226d97c0efaba6330a092e6590a324'
-	'badaa028529b1fba1fd7f9a84f3b64f31190466c858011b53e2f7b70c6a3078d'
+	'21d79ebfa9f2fb93141836c2666cb81f4784c69d64e7f1b2352f9b970ba09729'
 	'd78711587e6d554de5dc47adca00fc1eb6c8f8ca11c9e75411da8da60eae7abe'
 	'8fa6086704a73005141fcad09554f05df60816896114c44a60cfcf868614ae00'
 	'887362329b2eab52c9a41bd575061423d28b68febc7a4aef001bdbba9358f7b9'
@@ -34,7 +34,7 @@ prepare() {
 }
 
 build() {
-	cd "$srcdir/dwm-6.3"
+	cd "$srcdir/dwm-6.5"
 	echo "Applying config"
 #	rm config.h
 	cp config.def.h config.h
@@ -42,7 +42,7 @@ build() {
 }
 
 package() {
-	cd "$srcdir/dwm-6.3"
+	cd "$srcdir/dwm-6.5"
 	make PREFIX=/usr DESTDIR="$pkgdir" install
 	install -Dm644 LICENSE "$pkgdir/usr/share/licences/$pkgname/LICENSE"
 	install -Dm644 "$srcdir/dwm.desktop" "$pkgdir/usr/share/xsessions/dwm.desktop"
