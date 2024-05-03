@@ -1,6 +1,28 @@
 # SCDF-dwm
 custom build of dwm tailored for SCDF
 
+<details>
+    <summary>Index</summary>
+
+- [List of patches](#list-of-patches)
+- [Installation](#installation)
+    - [Arch linux](#arch-linux)
+        - [Installing from source](#installing-from-source)
+    - [Manual installation](#manual-installation)
+
+</details>
+
+## List of patches
+
+Below is a list of the patches currently in use.
+
+- [autostart](https://dwm.suckless.org/patches/autostart/)
+- [flextile](https://dwm.suckless.org/patches/flextile/)
+- [winicon](https://dwm.suckless.org/patches/winicon/)
+- [moveresize](https://dwm.suckless.org/patches/moveresize/)
+- [ipc](https://dwm.suckless.org/patches/ipc/)
+- [xresources](https://dwm.suckless.org/patches/xresources/)
+
 ## Installation
 
 ### Arch linux
