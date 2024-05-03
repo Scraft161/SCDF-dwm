@@ -22,5 +22,5 @@ fi
 
 for patch in $patchlist; do
 	echo "$patch"
-	patch -d "src/dwm-${dwmver}" -i "../../$patch"
+	patch -d "src/dwm-${dwmver}" -i "../../Patches/$patch"
 done
