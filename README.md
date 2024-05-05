@@ -5,6 +5,7 @@ custom build of dwm tailored for SCDF
     <summary>Index</summary>
 
 - [List of patches](#list-of-patches)
+- [Xresources](#xresources)
 - [Installation](#installation)
     - [Arch linux](#arch-linux)
         - [Installing from source](#installing-from-source)
@@ -22,6 +23,43 @@ Below is a list of the patches currently in use.
 - [moveresize](https://dwm.suckless.org/patches/moveresize/)
 - [ipc](https://dwm.suckless.org/patches/ipc/)
 - [xresources](https://dwm.suckless.org/patches/xresources/)
+
+## Xresources
+
+Our patchset includes the `dwm-xresources` patch that allows us to expose variables to be configured with Xresources.
+
+The intended way to use this is to create `~/.local/dwm/autostart.sh` with the following:
+```sh
+#!/bin/sh
+# You can use `/bin/bash` or `/usr/bin/env bash` depending on your needs; but POSIX-SH is often enough for these.
+
+xrdb -merge ~/.Xresources
+
+# Other init commands can go here
+```
+
+After that you can add the following to your `~/.Xresources`:
+```Xdefaults
+! dwm colors
+dwm.normbgcolor: #1a1b26
+dwm.normbordercolor: #1a1b26
+dwm.normfgcolor: #a9b1d6
+dwm.selbgcolor: #24283b
+dwm.selbordercolor: #24283b
+dwm.selfgcolor: #a9b1d6
+
+! other vars
+! Note that these are for demonstration purposes; we don't recommend you actually copy and paste these.
+dwm.font: "Noto sans:size=10"
+dwm.dmenufont: "monofur:size=10"
+dwm.borderpx: 5
+dwm.snap: 128
+dwm.showbar: false
+dwm.topbar: false
+dwm.layoutaxis: 3
+dwm.resizehints: 0
+dwm.mfact: 0.6
+```
 
 ## Installation
 
