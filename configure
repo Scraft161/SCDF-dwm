@@ -6,8 +6,13 @@ dwmver="6.5"
 
 mkdir -p "src"
 
-wget -O "src/dwm-${dwmver}.tar.gz" "https://dl.suckless.org/dwm/dwm-${dwmver}.tar.gz"
-#if [ "$$" -ne 0 ]; then exit 1; fi
+rm -rf "src/dwm-${dwmver}" 1>/dev/null
+
+if ! [ -f "src/dwm-${dwmver}.tar.gz" ]; then
+	wget -O "src/dwm-${dwmver}.tar.gz" "https://dl.suckless.org/dwm/dwm-${dwmver}.tar.gz"
+	if [ "$?" -ne 0 ]; then exit 1; fi
+fi
+
 tar -xzf "src/dwm-${dwmver}.tar.gz" -C "src"
 
 echo "Done, dwm is downloaded and extracted!\nYou can now run \`patch.sh\` to apply the SCDF patches."
