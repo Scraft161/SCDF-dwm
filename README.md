@@ -38,24 +38,38 @@ xrdb -merge ~/.Xresources
 # Other init commands can go here
 ```
 
-After that you can add the following to your `~/.Xresources`:
+After that you can add the following to your `~/.Xresources`, note that the values displayed are the defaults dwm will fall back to if not set:
 ```Xdefaults
 ! dwm colors
-dwm.normbgcolor: #1a1b26
-dwm.normbordercolor: #1a1b26
-dwm.normfgcolor: #a9b1d6
-dwm.selbgcolor: #24283b
-dwm.selbordercolor: #24283b
-dwm.selfgcolor: #a9b1d6
+
+! Default background color.
+dwm.normbgcolor: #222222
+! Default border color
+dwm.normbordercolor: #444444
+! Default foreground color
+dwm.normfgcolor: #bbbbbb
+! Selected background color (used for tag indicators and bar of active monitor)
+dwm.selbgcolor: #eeeeee
+! Selected border color (use for border of active window)
+dwm.selbordercolor: #005577
+! Selected foreground color (used for text on tag indicators & bar)
+dwm.selfgcolor: #005577
 
 ! other vars
-! Note that these are for demonstration purposes; we don't recommend you actually copy and paste these.
-dwm.font: "Noto sans:size=10"
-dwm.dmenufont: "monofur:size=10"
-dwm.borderpx: 5
-dwm.snap: 128
-dwm.showbar: false
-dwm.topbar: false
+
+! Font to use for the bar
+dwm.font: "sans:size=10"
+! Font to use for dmenu (you likely want to use the above value)
+dwm.dmenufont: "sans:size=10"
+! Width of window borders in px
+dwm.borderpx: 1
+! Amount of pixels away from a border to snap it to it
+dwm.snap: 16
+! Whether to show the bar by default (0 = false, 1 = true)
+dwm.showbar: 1
+! Whether the bar should be placed on top (0 = false, 1 = true)
+dwm.topbar: 1
+
 dwm.layoutaxis: 3
 dwm.resizehints: 0
 dwm.mfact: 0.6
