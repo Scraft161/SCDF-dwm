@@ -1,7 +1,7 @@
 diff -uN src/dwm-6.5-orig/config.def.h src/dwm-6.5/config.def.h
 --- src/dwm-6.5-orig/config.def.h	2024-05-01 01:04:34.525867175 +0200
 +++ src/dwm-6.5/config.def.h	2024-05-01 17:45:35.923586498 +0200
-@@ -1,23 +1,25 @@
+@@ -1,24 +1,26 @@
  /* See LICENSE file for copyright and license details. */
  
  /* appearance */
@@ -9,10 +9,12 @@ diff -uN src/dwm-6.5-orig/config.def.h src/dwm-6.5/config.def.h
 -static const unsigned int snap      = 32;       /* snap pixel */
 -static const int showbar            = 1;        /* 0 means no bar */
 -static const int topbar             = 1;        /* 0 means bottom bar */
+-static const int user_bh            = 2;        /* 2 is the default spacing around the bar's font */
 +static unsigned int borderpx  = 1;        /* border pixel of windows */
 +static unsigned int snap      = 32;       /* snap pixel */
 +static int showbar            = 1;        /* 0 means no bar */
 +static int topbar             = 1;        /* 0 means bottom bar */
++static int user_bh            = 2;        /* 2 is the default spacing around the bar's font */
  #define ICONSIZE 16   /* icon size */
  #define ICONSPACING 5 /* space between icon and title */
 -static const char *fonts[]          = { "monospace:size=10" };
@@ -42,20 +44,22 @@ diff -uN src/dwm-6.5-orig/config.def.h src/dwm-6.5/config.def.h
  };
  
  /* tagging */
-@@ -37,9 +39,9 @@
+@@ -37,10 +39,10 @@
  };
  
  /* layout(s) */
 -static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 -static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+-static const int statusall   = 1;    /* 1 means status is shown in all bars, not just active monitor */
 -static const int layoutaxis[] = {
 +static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 +static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
++static int statusall   = 1;    /* 1 means status is shown in all bars, not just active monitor */
 +static int layoutaxis[] = {
  	1,    /* layout axis: 1 = x, 2 = y; negative values mirror the layout, setting the master area to the right / bottom instead of left / top */
  	2,    /* master axis: 1 = x (from left to right), 2 = y (from top to bottom), 3 = z (monocle) */
  	2,    /* stack axis:  1 = x (from left to right), 2 = y (from top to bottom), 3 = z (monocle) */
-@@ -66,9 +68,30 @@
+@@ -66,9 +68,32 @@
  
  /* commands */
  static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -82,6 +86,8 @@ diff -uN src/dwm-6.5-orig/config.def.h src/dwm-6.5/config.def.h
 +		{ "nmaster",          	INTEGER, &nmaster },
 +		{ "resizehints",       	INTEGER, &resizehints },
 +		{ "mfact",      	 	FLOAT,   &mfact },
++		{ "barheight",          INTEGER, &user_bh },
++		{ "statusall" ,         INTEGER, &statusall},
 +};
 +
  static const Key keys[] = {
