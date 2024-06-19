@@ -10,7 +10,6 @@ dwm-flextile-20210722-138b405.diff
 dwm-winicon-6.3-v2.1.diff
 dwm-moveresize-20221210-7ac106c.diff
 dwm-multimon-4-status_all-6.4-modified.diff
-dwm-warp-6.4.diff
 dwm-bar-height-spacing-6.3-modified.diff
 dwm-ipc-6.5-modified.diff
 dwm-xresources-6.5-modified.diff
@@ -28,7 +27,7 @@ for patch in $patchlist; do
 	patch -d "src/dwm-${dwmver}" -i "../../Patches/$patch"
 
 	if [ "$?" -ne 0 ]; then
-		printf '%s\n' "[ERR]: could not apply patch \`$patch\`, exiting!"
+		printf '%s\n' "[ERR]: Could not apply patch \`$patch\`, exiting!"
 		exit 1
 	fi
 done
